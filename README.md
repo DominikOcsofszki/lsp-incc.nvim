@@ -31,7 +31,7 @@ require("lazy").setup({
 - or inside plugins/some_name.lua
 ```lua
 return {
-	{
+    {
 		"DominikOcsofszki/lsp-incc.nvim",
 		opts = {
 			path = "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER_run.sh"
