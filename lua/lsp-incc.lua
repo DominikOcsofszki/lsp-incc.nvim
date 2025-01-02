@@ -39,26 +39,8 @@ local create_incc24_lsp_config = function(conf)
 	end
 	require("lspconfig").incc24_lsp.setup {}
 end
--- local create_incc24_lsp_config = function()
--- 	if not require 'lspconfig.configs'.incc24_lsp then
--- 		require 'lspconfig.configs'.incc24_lsp = {
--- 			default_config = {
--- 				cmd = { M.configs.CMD_INCC24 },
--- 				filetypes = { 'tx', 'incc', 'incc24' },
--- 				root_dir = function(fname)
--- 					return require 'lspconfig'.util.find_git_ancestor(fname)
--- 				end,
--- 				settings = {},
--- 				on_attach = LSP_IMPORTS.ON_ATTACH,
--- 				capabilities = LSP_IMPORTS.CAPABILITIES,
--- 			},
--- 		}
--- 	end
--- 	require("lspconfig").incc24_lsp.setup {}
--- end
 
-
-M.setup = function(conf)
+M.setup                        = function(conf)
 	create_autocmd_ft_incc()
 	create_incc24_lsp_config(conf)
 end
