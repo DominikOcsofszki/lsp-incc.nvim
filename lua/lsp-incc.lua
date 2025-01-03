@@ -18,6 +18,12 @@ local create_autocmd_ft_incc   = function()
 			incc = 'incc',
 			incc24 = 'incc',
 		},
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "incc",
+			callback = function()
+				vim.bo.commentstring = "# %s"
+			end,
+		})
 	})
 end
 

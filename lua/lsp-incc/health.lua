@@ -12,8 +12,8 @@ local optional_dependencies = {
 		finder_name = "lsp-incc-server",
 		package = {
 			{
-				name = "rg",
-				url = "[BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)",
+				name = "python3",
+				url = "",
 				optional = false,
 			},
 		},
@@ -21,8 +21,31 @@ local optional_dependencies = {
 }
 
 local required_plugins = {
-	{ lib = "plenary", optional = false },
+	{ lib = "cmp_nvim_lsp", optional = false },
+	{ lib = "lspconfig",    optional = false },
 }
+
+local check_python_module_installed = function(package)
+	local python_exists = vim.fn.executable("python3") == 1
+	if python_exists then
+		local binaries = package.binaries or { package.name }
+		for _, binary in ipairs(binaries) do
+			local found = vim.fn.executable(binary) == 1
+			if not found and is_win then
+				binary = binary .. ".exe"
+				found = vim.fn.executable(binary) == 1
+			end
+			if found then
+				-- local handle = io.popen(binary .. " --version")
+				local handle = io.popen(binary .. " -m incc-lsp")
+				local binary_version = handle:read "*a"
+				handle:close()
+				return true, binary_version
+			end
+		end
+	end
+end
+
 
 local check_binary_installed = function(package)
 	local binaries = package.binaries or { package.name }
@@ -90,26 +113,6 @@ M.check = function()
 			end
 		end
 	end
-
-	-- -- Extensions
-	-- start "===== Installed extensions ====="
-	--
-	-- local installed = {}
-	-- for extension_name, _ in pairs(extension_info) do
-	-- 	installed[#installed + 1] = extension_name
-	-- end
-	-- table.sort(installed)
-	--
-	-- for _, installed_ext in ipairs(installed) do
-	-- 	local extension_healthcheck = extension_module._health[installed_ext]
-	--
-	-- 	start(string.format("Telescope Extension: `%s`", installed_ext))
-	-- 	if extension_healthcheck then
-	-- 		extension_healthcheck()
-	-- 	else
-	-- 		info "No healthcheck provided"
-	-- 	end
-	-- end
 end
-
+check_python_module_installed("python3")
 return M
