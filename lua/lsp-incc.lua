@@ -1,7 +1,7 @@
 -- local LSP_IMPORTS  = require("lsp-incc-nvim.lsp-all-import")
 
 local M            = {}
-local CMD_INCC24   = "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER.sh"
+local CMD_INCC24   = { "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER.sh" }
 local DEFAULT_OPTS = {
 	path = CMD_INCC24,
 	CAPABILITIES = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -32,7 +32,8 @@ local create_incc24_lsp_config = function(conf)
 	if not require 'lspconfig.configs'.incc24_lsp then
 		require 'lspconfig.configs'.incc24_lsp = {
 			default_config = {
-				cmd = { merged_config.path },
+				-- cmd = { merged_config.path },
+				cmd = merged_config.path,
 				filetypes = { 'tx', 'incc', 'incc24' },
 				root_dir = function(fname)
 					return require 'lspconfig'.util.find_git_ancestor(fname)
