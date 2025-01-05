@@ -31,7 +31,8 @@ return {
 		dependencies = { 
         "hrsh7th/cmp-nvim-lsp", 
         "neovim/nvim-lspconfig" 
-        }
+        },
+        build='install_lsp_pipx.sh'
 	}
 }
 ```
@@ -50,5 +51,10 @@ python3 -m pip install --user pipx
 ```sh
 sh install_lsp_pipx.sh
 ```
+
+
+
+
+
 
 
