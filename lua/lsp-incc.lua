@@ -1,7 +1,10 @@
 -- local LSP_IMPORTS  = require("lsp-incc-nvim.lsp-all-import")
 
 local M            = {}
-local CMD_INCC24   = { "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER.sh" }
+-- local CMD_INCC24   = { "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER.sh" }
+-- local CMD_INCC24   = { 'python3', '-m', 'lsp_incc' }
+local CMD_INCC24   = { "incc_lsp" }
+
 local DEFAULT_OPTS = {
 	path = CMD_INCC24,
 	CAPABILITIES = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),

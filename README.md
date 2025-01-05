@@ -17,28 +17,26 @@
 ## Install
 
 - With [lazy.nvim](https://github.com/folke/lazy.nvim)
+- Change path to current LSP-SERVER
 
-```lua
-require("lazy").setup({
-	{
-		"DominikOcsofszki/lsp-incc.nvim",
-		opts = {
-			path = "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER_run.sh"
-		}
-	}
-}
-```
-- or inside plugins/some_name.lua
 ```lua
 return {
     {
 		"DominikOcsofszki/lsp-incc.nvim",
 		opts = {
-			path = "/Users/dominik/HOME/BA/DEV/MAIN/src/incc_lsp/SERVER_run.sh"
+			path = {'incc_lsp'} -- DEFAULT
 		}
 	}
 }
 ```
 
-- Change path to current LSP-SERVER
+
+```sh
+brew install pipx
+```
+
+```sh
+sh install_lsp_into_python_global.sh
+```
+
 
