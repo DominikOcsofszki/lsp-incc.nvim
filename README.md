@@ -13,6 +13,7 @@
 ## Requirements
 
 - Neovim (>= 0.9)
+- Python (>= 3.12.0)
 
 ## Install
 
@@ -34,9 +35,9 @@ return {
 }
 ```
 
-### per (pipx)[https://github.com/pypa/pipx]:
+### per [pipx](https://github.com/pypa/pipx):
 
-- options:
+- install pipx:
 ```sh
 brew install pipx
 sudo apt install pipx
@@ -44,6 +45,7 @@ sudo dnf install pipx
 sudo pacman -S python-pipx
 python3 -m pip install --user pipx
 ```
+- install incc_lsp per pipx
 ```sh
 sh install_lsp_pipx.sh
 ```
