@@ -18,7 +18,8 @@
 ## Install
 
 - With [lazy.nvim](https://github.com/folke/lazy.nvim)
-- Change path to current LSP-SERVER
+- Change path to current incc_lsp
+- after `sh install_lsp_pipx.sh` default should work
 
 ```lua
 return {
