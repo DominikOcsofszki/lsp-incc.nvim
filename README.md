@@ -32,7 +32,7 @@ return {
         "hrsh7th/cmp-nvim-lsp", 
         "neovim/nvim-lspconfig" 
         },
-        build='install_lsp_pipx.sh'
+        build='sh install.sh'
 	}
 }
 ```
@@ -49,7 +49,7 @@ python3 -m pip install --user pipx
 ```
 - install incc_lsp per pipx
 ```sh
-sh install_lsp_pipx.sh
+sh install.sh
 ```
 
 
