@@ -21,22 +21,31 @@
 
 ```lua
 return {
-    {
+	{
 		"DominikOcsofszki/lsp-incc.nvim",
 		opts = {
-			path = {'incc_lsp'} -- DEFAULT
-		}
+			-- path = { "incc_lsp" } -- DEFAULT
+		},
+		dependencies = { 
+        "hrsh7th/cmp-nvim-lsp", 
+        "neovim/nvim-lspconfig" 
+        }
 	}
 }
 ```
 
+### per (pipx)[https://github.com/pypa/pipx]:
 
+- options:
 ```sh
 brew install pipx
+sudo apt install pipx
+sudo dnf install pipx
+sudo pacman -S python-pipx
+python3 -m pip install --user pipx
 ```
-
 ```sh
-sh install_lsp_into_python_global.sh
+sh install_lsp_pipx.sh
 ```
 
 
