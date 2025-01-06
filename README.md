@@ -167,7 +167,7 @@ require("lazy").setup({
 	}
 })
 ```
-example: test.incc or test.incc24
+- example: example.incc or example.incc24
 ```incc
 {
 missing_semi ="ERROR"
@@ -225,6 +225,8 @@ missing_semi ="ERROR"
 
 ```
 
+- Result:
+![Example InCC](example.incc.png)
 
 
 
