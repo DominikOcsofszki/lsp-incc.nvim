@@ -1,0 +1,5 @@
+[console_scripts]
+incc_lsp = incc_lsp.cli:main
+
+[gui_scripts]
+

@@ -8,7 +8,7 @@ local CMD_INCC24   = { "incc_lsp" }
 local DEFAULT_OPTS = {
 	path = CMD_INCC24,
 	CAPABILITIES = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-	ON_ATTACH = M.ON_ATTACH,
+	ON_ATTACH = require("lsp-incc.incc-lsp-configs").ON_ATTACH,
 	SETTINGS = {}
 }
 

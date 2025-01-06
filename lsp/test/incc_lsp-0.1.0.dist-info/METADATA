@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: incc-lsp
+Version: 0.1.0
+Summary: incc-lsp
+Author-Email: Dominik Ocsofszki <dominikocsofszki@gmail.com>
+License: MIT
+Requires-Python: >=3.11
+Requires-Dist: ply>=3.11
+Requires-Dist: pytest>=8.3.3
+Requires-Dist: icecream>=2.1.3
+Requires-Dist: requests>=2.32.3
+Requires-Dist: pygls@ file:///Users/dominik/HOME/DEV/OPENSOURCE/pygls/dist/pygls-2.0.0a2-py3-none-any.whl
+Requires-Dist: incc-interpreter-ue08@ file:///Users/dominik/HOME/BA/DEV/extern/InCC-interpreter_ue08_parser/dist/incc_interpreter_ue08-0.1.0-py3-none-any.whl
+Description-Content-Type: text/markdown
+
+# InCC-LSP
