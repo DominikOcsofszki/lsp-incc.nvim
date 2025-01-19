@@ -27,6 +27,7 @@
 - install pipx first
 - after `sh install.sh` default should work
 - With [lazy.nvim](https://github.com/folke/lazy.nvim)
+- .git is needed for the Language-Server to start => 'git init'
 
 ```lua
 require("lazy").setup({
