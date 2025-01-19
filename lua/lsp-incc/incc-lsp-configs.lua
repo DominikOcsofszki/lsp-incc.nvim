@@ -23,13 +23,15 @@ M.ON_ATTACH = function(_, bufnr)
 	nmap('<leader>gr', vim.lsp.buf.rename, '[R]e[n]ame')
 	nmap('<leader>gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
 	nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-	nmap('<leader>gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 	nmap('<leader>gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
 	nmap('<leader>gD', vim.lsp.buf.type_definition, 'Type [D]efinition')
-	nmap('<leader>gs', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 	nmap('<leader>gh', vim.lsp.buf.hover, 'Hover Documentation')
 	nmap('gh', vim.lsp.buf.hover, 'Hover Documentation')
 	nmap('<leader>g=', vim.lsp.buf.signature_help, 'Signature Documentation')
+	-- nmap('<leader>gs', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+	nmap('<leader>gs', vim.lsp.buf.document_symbol, '[D]ocument [S]ymbols')
+	-- nmap('<leader>gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+	nmap('<leader>gR', vim.lsp.buf.references, '[G]oto [R]eferences')
 end
 
 
